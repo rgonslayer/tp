@@ -348,10 +348,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. User did not input any arguments.
 
-    * 3a1. Financial Advisor Planner shows an error message. 
-  
+    * 3a1. Financial Advisor Planner shows an error message.
+
       Use case resumes at step 2.
-  
+
 * 3b. The given index is invalid.
 
     * 3b1. Financial Advisor Planner shows an error message.
