@@ -15,7 +15,7 @@ public class PlanTag extends Tag {
     /**
      * Constructs a {@code Tag}.
      *
-     * @param tagName A valid tag name.
+     * @param tagName A valid plan tag name.
      */
     public PlanTag(String tagName) {
         super(tagName);
