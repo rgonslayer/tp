@@ -9,8 +9,8 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class IncomeLevel {
 
-    public static final String MESSAGE_CONSTRAINTS = "Income can take in any digit preceded by " +
-            "$ followed by [1-9] or [0]";
+    public static final String MESSAGE_CONSTRAINTS = "Income can take in any digit preceded by "
+            + "$ followed by [1-9] or [0]";
 
     /*
      * The first character of the address must not be a whitespace,
