@@ -1,6 +1,8 @@
 package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_INCOME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_MONTHLY;
 import static seedu.address.model.person.Person.MAXIMUM_NUM_OF_APPOINTMENTS;
 
 import java.time.LocalDateTime;
@@ -362,17 +364,26 @@ public class ParserUtil {
     /**
      * Parses {@code Collection<String> monetaryValues} into a {@code List<String>}.
      */
-    public static List<String> parseMonetaryValues(Collection<String> monetaryValues)
+    public static List<String> parseMonetaryValues(Collection<String> monetaryValues, Prefix prefix)
             throws ParseException {
         requireNonNull(monetaryValues);
-        final List<String> incomeLevelList = new ArrayList<>(monetaryValues);
-        for (int i = 0; i < incomeLevelList.size(); i++) {
+        final List<String> monetaryList = new ArrayList<>(monetaryValues);
+        for (int i = 0; i < monetaryList.size(); i++) {
             if (i == 0) {
-                parseIncomeLevel("$" + incomeLevelList.get(i).substring(1));
+                if (prefix == PREFIX_INCOME) {
+                    parseIncomeLevel("$" + monetaryList.get(i).substring(1));
+                } else if (prefix == PREFIX_MONTHLY) {
+                    parseMonthly("$" + monetaryList.get(i).substring(1));
+                }
             } else {
-                parseIncomeLevel("$" + incomeLevelList.get(i));
+                if (prefix == PREFIX_INCOME) {
+                    parseIncomeLevel("$" + monetaryList.get(i));
+                } else if (prefix == PREFIX_MONTHLY) {
+                    parseMonthly("$" + monetaryList.get(i));
+                }
             }
         }
-        return incomeLevelList;
+        return monetaryList;
     }
+
 }

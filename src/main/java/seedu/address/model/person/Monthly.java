@@ -9,13 +9,14 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Monthly {
 
-    public static final String MESSAGE_CONSTRAINTS = "Income can take in any digit preceded by $ followed by [1-9]";
+    public static final String MESSAGE_CONSTRAINTS = "Monthly Contributions" +
+            " can take in any digit preceded by $ followed by [1-9] or [0]";
 
     /*
      * The first character of the address must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String VALIDATION_REGEX = "^(\\$)(0|[1-9][0-9]*)$";
+    public static final String VALIDATION_REGEX = "^(\\$)([0]|[1-9][0-9]*)$";
 
     public final String value;
 

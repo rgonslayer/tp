@@ -191,8 +191,9 @@ public class FindCommandParserTest {
         assertParseFailure(parser, INVALID_PLANTAG_DESC, PlanTag.MESSAGE_CONSTRAINTS); // invalid PlanTag
         assertParseFailure(parser, INVALID_CLIENTTAG_DESC, ClientTag.MESSAGE_CONSTRAINTS); // invalid ClientTag
         assertParseFailure(parser, INVALID_INCOME_DESC, IncomeLevel.MESSAGE_CONSTRAINTS); // invalid income
-        assertParseFailure(parser, INVALID_MONTHLY_DESC, Monthly.MESSAGE_CONSTRAINTS); // invalid monthly
         assertParseFailure(parser, INVALID_TAG_DESC, Tag.MESSAGE_CONSTRAINTS); // invalid tag
+        assertParseFailure(parser, INVALID_MONTHLY_DESC, Monthly.MESSAGE_CONSTRAINTS); // invalid monthly
+
 
         // invalid phone followed by valid email
         assertParseFailure(parser, INVALID_PHONE_DESC + EMAIL_DESC_AMY, Phone.MESSAGE_CONSTRAINTS);
