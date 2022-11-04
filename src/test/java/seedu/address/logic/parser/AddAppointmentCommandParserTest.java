@@ -26,6 +26,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.AddAppointmentCommand;
 import seedu.address.model.person.Appointment;
+import seedu.address.model.person.Location;
 import seedu.address.testutil.AppointmentBuilder;
 
 public class AddAppointmentCommandParserTest {
@@ -74,7 +75,7 @@ public class AddAppointmentCommandParserTest {
 
         // add appointment with invalid location
         assertParseFailure(parser, targetPersonIndex + "." + targetAppointmentIndex
-                + INVALID_LOCATION_FIELD_APPOINTMENT_DESC, expectedFailureMessage);
+                + INVALID_LOCATION_FIELD_APPOINTMENT_DESC, Location.MESSAGE_CONSTRAINTS);
 
         // add appointment with invalid location and invalid date
         assertParseFailure(parser, targetPersonIndex + "." + targetAppointmentIndex
