@@ -14,6 +14,8 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PLANTAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_RISKTAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.model.person.DateTime.DEFAULT_DAY_OUT_OF_BOUNDS_ERROR_MESSAGE;
+import static seedu.address.model.person.DateTime.DEFAULT_MONTH_OUT_OF_BOUNDS_ERROR_MESSAGE;
 
 import java.time.format.DateTimeParseException;
 
@@ -69,8 +71,17 @@ public class AddAppointmentCommandParser implements Parser<AddAppointmentCommand
             appointmentLocation = ParserUtil.parseLocation(argMultimap.getValue(PREFIX_APPOINTMENT_LOCATION).get());
             appointment = ParserUtil.parseAppointment(appointmentDateTime.toString(), appointmentLocation.toString());
         } catch (DateTimeParseException e) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    AddAppointmentCommand.MESSAGE_USAGE));
+            if (e.getCause() == null) {
+                throw new ParseException(DateTime.MESSAGE_CONSTRAINTS);
+            }
+            String str = e.getCause().getMessage();
+            if (str.contains(DEFAULT_DAY_OUT_OF_BOUNDS_ERROR_MESSAGE)) {
+                throw new ParseException(DEFAULT_DAY_OUT_OF_BOUNDS_ERROR_MESSAGE);
+            }
+            if (str.contains(DEFAULT_MONTH_OUT_OF_BOUNDS_ERROR_MESSAGE)) {
+                throw new ParseException(DEFAULT_MONTH_OUT_OF_BOUNDS_ERROR_MESSAGE);
+            }
+            throw new ParseException(String.format(Appointment.MESSAGE_CONSTRAINTS));
         }
 
         personIndex = ParserUtil.parseIndex(argMultimap.getPreamble());
