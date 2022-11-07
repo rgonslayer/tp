@@ -10,26 +10,26 @@ title: Chew Yew Keng's Project Portfolio Page
  Given below are my contributions to the project.
 
 - ### Feature: Added new `Tags`.
-  - What it does: Allows Users to add information about their client through easy to view tags. Currently there are 3  Special Tags:
-     - Risk Tag to indicate Client's Risk Appetite
-     - Plan Tag to indicate Client's current Financial Plan
-     - Client Tag to indicate Client's status
-  - All Special Tags are colour coded for users to easily interpret the values even without reading the tags fully.
-  - Allow users to find and sort based on Special Tags as well
+  - What it does: Allows Users to add information about their client through easy to view `tags`. Currently there are 3 `SpecialTags`:
+     - `RiskTag` to indicate Client's Risk Appetite
+     - `PlanTag` to indicate Client's current Financial Plan
+     - `ClientTag` to indicate Client's status
+  - All `SpecialTags` are colour coded for users to easily interpret the values even without reading the `tags` fully.
+  - Allow users to `find` and `sort` based on `SpecialTags` as well
   - Justification: Financial Advisors(FA) require a way to view their clients information easily, pulling out information that can only have fixed values helps to make reading the information easily.
 - ### Code contributed: [reposense](https://nus-cs2103-ay2223s1.github.io/tp-dashboard/?search=rgonslayer&breakdown=true&sort=groupTitle&sortWithin=title&since=2022-09-16&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other)
 
 - ### Enhancements implemented:
-  - Add Income field to contacts: Allows users to add yearly income of clients to the app
-  - Add Monthly Contributions field to contacts: Allows users to add monthly contributions of clients to the app
-  - Enhanced Find command to find by phone number: Allows users to find clients by phone number.
-  - Enhanced Find command to find by range of monthly contributions: Allows users to find clients by monthly contribution.
-  - Enhanced Find command to find by range of yearly income: Allows users to find clients by yearly income.
-  - Enhanced Find command to find by client tags: Allow users to find clients using their client tag.
-  - Enhanced Sort Command to sort by client tags: Allow used to sort clients based on their client tag.
-  - Abstracted Tag and Special Tag to better represent new categories of tags.
-  - Updated Find Command Hint to accurately represent correct command.
-  - Updated Help Window to reflect all commands added.
+  - Add `Income` field to contacts: Allows users to add yearly income of clients to the app
+  - Add `Monthly` Contributions field to contacts: Allows users to add monthly contributions of clients to the app
+  - Enhanced `Find` command to find by phone number: Allows users to find clients by phone number.
+  - Enhanced `Find` command to find by range of monthly contributions: Allows users to find clients by monthly contribution.
+  - Enhanced `Find` command to find by range of yearly income: Allows users to find clients by yearly income.
+  - Enhanced `Find` command to find by client tags: Allow users to find clients using their client tag.
+  - Enhanced `Sort` Command to sort by client tags: Allow used to sort clients based on their client tag.
+  - Abstracted `Tag` and `SpecialTag` to better represent new categories of `tags`.
+  - Updated `Find` Command Hint to accurately represent correct command.
+  - Updated `Help` Window to reflect all commands added.
    
 - ### Contributions to the UG:
   - Conducted final vetting of UG, ensuring all commands are working and details are coherent.
